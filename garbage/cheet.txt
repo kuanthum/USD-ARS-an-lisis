@@ -1,0 +1,6 @@
+str_df = df.select_dtypes([np.object])
+str_df = str_df.stack().str.decode('utf-8').unstack()
+
+df['mes'] = pd.DatetimeIndex(df['fecha']).month
+
+#df3 = df2.groupby([(df2.fecha.dt.year), (df2.fecha.dt.month)]).mean()
